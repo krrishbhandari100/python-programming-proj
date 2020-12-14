@@ -25,3 +25,6 @@ def func():
             print(num, "is not an armstrong number")
 
 func()
+
+input()
+# this input is to hold the screen when running from directory

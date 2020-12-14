@@ -10,3 +10,6 @@ all_l.extend(punc)
 len_of_pass = int(input("Enter the password length: "))
 for i in range(0, len_of_pass):
     print(random.choice(all_l), end='')
+print("\n")
+input()
+# this input is to hold the screen when running from directory
