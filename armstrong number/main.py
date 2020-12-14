@@ -1,6 +1,5 @@
-num = int(input("Enter a number"))
-
 def func():
+    num = int(input("Enter a number: "))
     if(num==""):
         print("blank not allowed")
     else:
@@ -24,3 +23,5 @@ def func():
             print(num, "is an armstrong number")
         else:
             print(num, "is not an armstrong number")
+
+func()
