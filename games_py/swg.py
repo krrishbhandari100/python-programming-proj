@@ -37,8 +37,8 @@ for i in range(0, times):
         print("You loose")
         print("You choosed", user_inp)
         print("Computer choosed", BOT)
-        userPoints = userPoints - 1
-        computerPoints = computerPoints + 0
+        userPoints = userPoints + 0
+        computerPoints = computerPoints + 1
         print("The Computer Point is: ", computerPoints)
         print("The User Point is: ", userPoints)
         print("*******************************************************************************")
@@ -49,8 +49,8 @@ for i in range(0, times):
         print("You loose")
         print("You choosed", user_inp)
         print("Computer choosed", BOT)
-        userPoints = userPoints - 1
-        computerPoints = computerPoints + 0
+        userPoints = userPoints + 0
+        computerPoints = computerPoints + 1
         print("The Computer Point is: ", computerPoints)
         print("The User Point is: ", userPoints)
         print("*******************************************************************************")
@@ -95,8 +95,8 @@ for i in range(0, times):
         print("You loose")
         print("You choosed", user_inp)
         print("Computer choosed", BOT)
-        userPoints = userPoints - 1
-        computerPoints = computerPoints + 0
+        userPoints = userPoints + 0
+        computerPoints = computerPoints + 1
         print("The Computer Point is: ", computerPoints)
         print("The User Point is: ", userPoints)
         print("*******************************************************************************")
@@ -117,8 +117,10 @@ for i in range(0, times):
 print("In final the computer point is: ", computerPoints)
 print("In final the user point is: ", userPoints)
 if(computerPoints > userPoints):
-    print("you loose")
+    print("you loose by", computerPoints - userPoints)
 elif(computerPoints < userPoints):
-    print("you won")
+    print("you won", userPoints - computerPoints)
 elif(computerPoints==userPoints):
     print("tie")
+input()
+# this input tag is for holding the screen when running from windows
