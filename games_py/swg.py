@@ -119,7 +119,7 @@ print("In final the user point is: ", userPoints)
 if(computerPoints > userPoints):
     print("you loose by", computerPoints - userPoints)
 elif(computerPoints < userPoints):
-    print("you won", userPoints - computerPoints)
+    print("you won by", userPoints - computerPoints)
 elif(computerPoints==userPoints):
     print("tie")
 input()
