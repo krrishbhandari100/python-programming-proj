@@ -20,7 +20,7 @@ def func(num):
 
         # display the result
         if num == sum:
-            print(num, "is an armstrong number")
+            return num, "is an armstrong number"
         else:
-            print(num, "is not an armstrong number")
+            return num, "is not an armstrong number"
 # this input is to hold the screen when running from directory

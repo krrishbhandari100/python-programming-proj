@@ -5,7 +5,9 @@ import armstrong
 import os
 import wikipedia
 import webbrowser
+import requests
 
+# all functions
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as m:
@@ -13,7 +15,20 @@ def takeCommand():
         uinput = r.listen(m)
         r.pause_threshold = 1
         query = r.recognize_google(uinput, language="en-in")
+        print(query)
         return query
+
+def takeCommandForArmstrong():
+    r1 = sr.Recognizer()
+    with sr.Microphone() as m1:
+        print("Listening Your Number....")
+        uinput1 = r1.listen(m1)
+        r1.pause_threshold = 1
+        query1 = r1.recognize_google(uinput1, language="en-in")
+        print(query1)
+        res = armstrong.func(int(query1))
+        print(res)
+        speak(res)
 
 def speak(audio):
     engine = pyttsx3.init()
@@ -53,14 +68,9 @@ if __name__ == "__main__":
             speak("and the year is " + datetime.datetime.today().strftime('%Y'))
         
         elif 'find armstrong number' in userinput:
-            print(userinput)
             speak("Sir, Please speak the armstrong number")
-            # second microphone
-            with sr.Microphone() as m1:
-                print("sir, please speak the armstrong number")
-                uinput1 = r.listen(m1)
-                query1 = r.recognize_google(uinput1, language="en-in")
-                armstrong.func(int(query1))
+            takeCommandForArmstrong()
+                
         elif 'open code' in userinput:
             print(userinput)
             print("Opening Visual Studio Code...")
@@ -89,6 +99,12 @@ if __name__ == "__main__":
             print(userinput)
             speak("Opening your reference....")
             webbrowser.open("http://krrishbhandari.hyperphp.com/")
+        
+        elif 'ip' in userinput:
+            ip = requests.get('https://api.ipify.org/').text
+            tos = f"Sir your ip address is {ip}"
+            print(ip)
+            speak(tos)
 
         elif 'exit' in userinput:
             print("bye")
