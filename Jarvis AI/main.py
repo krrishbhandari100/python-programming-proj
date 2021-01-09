@@ -105,8 +105,14 @@ if __name__ == "__main__":
             tos = f"Sir your ip address is {ip}"
             print(ip)
             speak(tos)
+        
+        elif 'who are you' in userinput:
+            speak("Sir, I am Jarvis, Your Assistant and I will be making your work easier")
 
         elif 'exit' in userinput:
             print("bye")
             speak("Good Bye Sir....")
             jarvistm = False
+        else:
+            
+            speak("The function you want is not there in me, Sorry for inconvenience caused")
