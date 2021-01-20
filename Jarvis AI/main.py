@@ -1,13 +1,42 @@
-import pyttsx3
-import speech_recognition as sr
-import datetime
-import armstrong
-import os
-import wikipedia
-import webbrowser
-import requests
+try:
+    import pyttsx3
+    import speech_recognition as sr
+    import datetime
+    import os
+    import wikipedia
+    import webbrowser
+    import requests
+except Exception as e:
+    print(e)
+    print("there are some issues in app this might conflict")
 
 # all functions
+def func(num):
+    # num = int(input("Enter a number: "))
+    if(num==""):
+        print("blank not allowed")
+    else:
+        num = int(num)
+        # Changed num variable to string,
+        # and calculated the length (number of digits)
+        order = len(str(num))
+
+        # initialize sum
+        sum = 0
+
+        # find the sum of the cube of each digit
+        temp = num
+        while temp > 0:
+            digit = temp % 10
+            sum += digit ** order
+            temp //= 10
+
+        # display the result
+        if num == sum:
+            return num, "is an armstrong number"
+        else:
+            return num, "is not an armstrong number"
+
 def takeCommand():
     r = sr.Recognizer()
     with sr.Microphone() as m:
@@ -26,7 +55,7 @@ def takeCommandForArmstrong():
         r1.pause_threshold = 1
         query1 = r1.recognize_google(uinput1, language="en-in")
         print(query1)
-        res = armstrong.func(int(query1))
+        res = func(int(query1))
         print(res)
         speak(res)
 
@@ -114,5 +143,4 @@ if __name__ == "__main__":
             speak("Good Bye Sir....")
             jarvistm = False
         else:
-            
             speak("The function you want is not there in me, Sorry for inconvenience caused")
