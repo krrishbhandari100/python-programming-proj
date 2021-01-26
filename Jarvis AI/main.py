@@ -6,6 +6,7 @@ try:
     import wikipedia
     import webbrowser
     import requests
+    import pywhatkit
 except Exception as e:
     print(e)
     print("there are some issues in app this might conflict")
@@ -113,6 +114,10 @@ if __name__ == "__main__":
             speak("According to Wikipedia")
             print(results)
             speak(results)
+        elif 'google' in userinput:
+            print(userinput)
+            userinput = userinput.replace("google", "")
+            pywhatkit.search(userinput)
         
         elif 'open google' in userinput:
             print(userinput)
