@@ -1,2 +1,3 @@
 *.idea
-*.vscode
+/Jarvis AI/.idea
+/Jarvis AI/.vscode
